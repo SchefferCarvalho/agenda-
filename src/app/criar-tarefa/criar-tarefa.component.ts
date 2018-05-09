@@ -12,7 +12,7 @@ export class CriarTarefaComponent  {
  nome
  date
  value
- id
+ descricao
  List = [];
 
  CriarTarefa(){
@@ -20,7 +20,7 @@ export class CriarTarefaComponent  {
   localStorage.setItem('nomeSalvo',this.nome);
   localStorage.setItem('dataSalva',this.date);
   localStorage.setItem('diciplinaSalva',this.value);
-  localStorage.setItem('descricao',this.id);
+  localStorage.setItem('descricao',this.descricao);
 
  }
 
