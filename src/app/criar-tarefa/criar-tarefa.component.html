@@ -1,0 +1,32 @@
+<label>Criar Tarefa</label>
+<br/>
+<br/>
+<body>
+    <label>nome</label>
+    <input [(ngModel)]="nome" type="text" id="nome">
+    <br/>
+    <br/>
+    <label>Data de Entrega</label>
+    <input [(ngModel)]="date" type="date" name="data entrega" id="data entrega">
+    <br/>
+    <br/>
+    <label>Diciplina</label>
+    <select [(ngModel)]="value" dicip="diciplina" id="value">
+        <option value="matemática">Matematica</option>
+        <option value="Ling.Portuguesa">Ling.Portuguesa</option>
+        <option value="Historia">Historia</option>
+    </select>
+    <br/>
+    <br>
+    <label>Descrição</label>
+    <div class="input-group">
+        <div class="input-group-prepend">
+        </div>
+        <textarea  class="from-control"[(ngModel)]="descricao" aria-label="with testearea" id="descrição"></textarea>
+    </div>
+
+    <br/>
+    <br/>
+    <button type="button" (click)="CriarTarefa()" id="criar">Criar</button>
+
+</body>
