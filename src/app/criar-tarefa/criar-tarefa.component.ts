@@ -21,7 +21,6 @@ export class CriarTarefaComponent  {
 
  CriarTarefa(){
   
-  
   var chavedate = new Date();
   var time = chavedate.getTime();
   var chave: string = 'Lista:'+ time;
@@ -31,7 +30,6 @@ export class CriarTarefaComponent  {
   this.list.push(this.value);
   this.list.push(this.descricao);
   
- 
   localStorage.setItem(chave,stringify(this.list));
  
  }
