@@ -2,6 +2,8 @@ import { Component} from '@angular/core';
 import { Button } from 'protractor';
 import { stringify } from '@angular/compiler/src/util';
 import { NgModel } from '@angular/forms';
+import { Tarefa } from '../tarefas';
+import { constructDependencies } from '@angular/core/src/di/reflective_provider';
 
 
 @Component({
@@ -13,26 +15,46 @@ export class CriarTarefaComponent  {
 
  nome
  date
- value
+ diciplina
  descricao
- list=[];
- 
-
-
+ estado
+ tarefa : Tarefa
+ lista =[]
  CriarTarefa(){
   
   var chavedate = new Date();
   var time = chavedate.getTime();
   var chave: string = 'Lista:'+ time;
-  
-  this.list.push(this.nome);
-  this.list.push(this.date);
-  this.list.push(this.value);
-  this.list.push(this.descricao);
-  
-  localStorage.setItem(chave,stringify(this.list));
+
+
+
+  /*this.lista.push(this.nome);
+  this.lista.push(this.date);
+  this.lista.push(this.diciplina);
+  this.lista.push(this.descricao);
+  this.lista.push(this.estado);*/
+
+
+   this.tarefa = new Tarefa(
+   this.nome,
+   this.date,
+   this.diciplina,
+   this.descricao,
+   this.estado  
+ );
+
+ this.lista.push(this.tarefa);
  
+ localStorage.setItem('tarefas',stringify(this.lista));
+ 
+  //tarefa = new Tarefa(
+  //  nome = this.nome,
+   // date = this.date)
+
+
  }
+
+ 
  
 
   }
