@@ -1,0 +1,40 @@
+<label> Agenda </label>
+<br/>
+<br/>
+<div class="box-body" style="margin:30px;">
+<table class="table display" border="1" id="tabela">
+  <thead>
+    <th>Nome</th>
+    <th>Data de Entrega</th>
+    <th>Disciplina</th>
+    <th>Descrição</th>
+    <th>Estado</th>
+    <th></th>
+    
+  </thead>
+  <tbody>
+  <tr *ngFor="let tarefa of tarefas">
+    <td>{{ tarefa.nome }}</td>
+    <td>{{ tarefa.date }}</td>
+    <td>{{ tarefa.diciplina }}</td>
+    <td>{{ tarefa.descricao }}</td>
+    <td>
+      <select [(ngModel)]="estado" name="" id="" (click)="AlteraStatus()">
+        <option value="">Feito</option>
+        <option value="">Não feito</option>
+      </select>
+    </td>
+    <td><button> Escolher </button>
+    <button> Editar </button>
+    <button> Excluir </button></td>
+    
+    
+  </tr>
+  </tbody>
+  </table>
+</div>
+  <br/>
+  <br/> 
+  <a href="http://localhost:4200"><button>Voltar</button></a>
+<br/>
+<br/>

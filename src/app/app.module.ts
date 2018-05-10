@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { VisHojeComponent } from './vis-hoje/vis-hoje.component';
 import { CriarTarefaComponent } from './criar-tarefa/criar-tarefa.component';
 import { routing } from './app.routing';
+import { TabelaAgendaComponent } from './tabela-agenda/tabela-agenda.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { routing } from './app.routing';
     AppComponent,
     VisHojeComponent,
     CriarTarefaComponent,
+    TabelaAgendaComponent
    
     
   ],

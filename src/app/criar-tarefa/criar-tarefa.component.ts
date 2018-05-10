@@ -24,33 +24,19 @@ export class CriarTarefaComponent  {
   
   var chavedate = new Date();
   var time = chavedate.getTime();
-  var chave: string = 'Lista:'+ time;
-
-
-
-  /*this.lista.push(this.nome);
-  this.lista.push(this.date);
-  this.lista.push(this.diciplina);
-  this.lista.push(this.descricao);
-  this.lista.push(this.estado);*/
-
+  var chave: string = 'lista-'+ time;
 
    this.tarefa = new Tarefa(
+   chave,
    this.nome,
    this.date,
    this.diciplina,
    this.descricao,
-   this.estado  
+   '0'
  );
 
- this.lista.push(this.tarefa);
+ localStorage.setItem(chave,JSON.stringify(this.tarefa));
  
- localStorage.setItem('tarefas',stringify(this.lista));
- 
-  //tarefa = new Tarefa(
-  //  nome = this.nome,
-   // date = this.date)
-
 
  }
 
