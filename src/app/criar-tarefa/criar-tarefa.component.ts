@@ -1,5 +1,7 @@
 import { Component} from '@angular/core';
 import { Button } from 'protractor';
+import { stringify } from '@angular/compiler/src/util';
+import { NgModel } from '@angular/forms';
 
 
 @Component({
@@ -13,16 +15,27 @@ export class CriarTarefaComponent  {
  date
  value
  descricao
- List = [];
+ list=[];
+ 
+
 
  CriarTarefa(){
+  
+  
+  var chavedate = new Date();
+  var time = chavedate.getTime();
+  var chave: string = 'Lista:'+ time;
+  
+  this.list.push(this.nome);
+  this.list.push(this.date);
+  this.list.push(this.value);
+  this.list.push(this.descricao);
+  
  
-  localStorage.setItem('nomeSalvo',this.nome);
-  localStorage.setItem('dataSalva',this.date);
-  localStorage.setItem('diciplinaSalva',this.value);
-  localStorage.setItem('descricao',this.descricao);
-
+  localStorage.setItem(chave,stringify(this.list));
+ 
  }
+ 
 
   }
   
