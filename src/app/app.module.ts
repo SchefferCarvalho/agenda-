@@ -6,18 +6,21 @@ import { VisHojeComponent } from './vis-hoje/vis-hoje.component';
 import { CriarTarefaComponent } from './criar-tarefa/criar-tarefa.component';
 import { routing } from './app.routing';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     VisHojeComponent,
-    CriarTarefaComponent
+    CriarTarefaComponent,
+   
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     routing
-    
 
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
