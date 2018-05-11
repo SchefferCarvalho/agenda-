@@ -35,7 +35,8 @@ export class TabelaAgendaComponent implements OnInit {
     } else {
       this.tarefa.estado = 1;
     }
-    this.tarefa = { "chave": this.tarefa.chave, "nome":this.tarefa.nome, "date": this.tarefa.date, "descricao": this.tarefa.descricao, "estado": this.tarefa.estado  }
+    this.tarefa = { "chave": this.tarefa.chave, "nome":this.tarefa.nome, "date": this.tarefa.date,"diciplina": this.tarefa.diciplina, "descricao": this.tarefa.descricao, "estado": this.tarefa.estado  }
     localStorage.setItem(chave,JSON.stringify(this.tarefa));
     this.ListaConsultas();
+  }
 }
