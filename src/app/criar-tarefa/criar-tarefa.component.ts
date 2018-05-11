@@ -32,12 +32,15 @@ export class CriarTarefaComponent  {
    this.date,
    this.diciplina,
    this.descricao,
-   '0'
+   0
  );
 
  localStorage.setItem(chave,JSON.stringify(this.tarefa));
- 
-
+ this.nome = null;
+ this.date = null;
+ this.diciplina = null;
+ this.descricao = null;
+ this.estado = null;
  }
 
  

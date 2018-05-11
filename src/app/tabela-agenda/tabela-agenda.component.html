@@ -1,15 +1,15 @@
-<label> Agenda </label>
+<app-header></app-header>
 <br/>
 <br/>
-<div class="box-body" style="margin:30px;">
+<div class="contet" style="margin:30px;">
 <table class="table display" border="1" id="tabela">
-  <thead>
+  <thead class="thead-dark">
     <th>Nome</th>
     <th>Data de Entrega</th>
     <th>Disciplina</th>
     <th>Descrição</th>
     <th>Estado</th>
-    <th></th>
+    <th>Ações</th>
     
   </thead>
   <tbody>
@@ -19,22 +19,21 @@
     <td>{{ tarefa.diciplina }}</td>
     <td>{{ tarefa.descricao }}</td>
     <td>
-      <select [(ngModel)]="estado" name="" id="" (click)="AlteraStatus()">
-        <option value="">Feito</option>
-        <option value="">Não feito</option>
-      </select>
+      {{ (tarefa.estado) ? 'Feito' : 'Não feito' }}
+      <form (submit)="AlteraStatus(tarefa.chave)">
+        <input type="submit" class="btn btn-primary" value="Alterar">
+      </form>
     </td>
-    <td><button> Escolher </button>
-    <button> Editar </button>
-    <button> Excluir </button></td>
+    <td>
+    <button class="btn btn-warning"> Editar </button>
+    <button class="btn btn-danger" style="margin-left: 20px;"> Excluir </button></td>
     
     
   </tr>
   </tbody>
   </table>
 </div>
-  <br/>
   <br/> 
-  <a routerLink=""><button>Voltar</button></a>
+  <a href="/"><button class="btn btn-primary">Voltar</button></a>
 <br/>
 <br/>

@@ -4,7 +4,7 @@ export class Tarefa {
     date: string
     diciplina: string
     descricao: string
-    estado: string
+    estado: number
 
     constructor(
         chave: string,
@@ -12,7 +12,7 @@ export class Tarefa {
         date: string,
         diciplina: string,
         descricao: string,
-        estado: string
+        estado: number
     ){
         this.chave = chave;
         this.nome = nome;

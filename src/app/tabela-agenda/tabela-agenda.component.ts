@@ -8,22 +8,34 @@ import { Tarefa } from '../tarefas';
 })
 export class TabelaAgendaComponent implements OnInit {
 
+  estado
+  feito = []
+  feitos = []
   tarefa
   tarefas = []
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
-    for (let index = 0; index < localStorage.length; index++) {
+     this.ListaConsultas();
+  }
 
+  ListaConsultas(){
+    this.tarefas = []
+    for (let index = 0; index < localStorage.length; index++) {
       this.tarefa = JSON.parse(localStorage.getItem(localStorage.key(index)));
-      
       this.tarefas.push(this.tarefa);
     }
   }
 
   AlteraStatus(chave){
-    console.log(chave);
-
-  }
+    this.tarefa = JSON.parse(localStorage.getItem(chave));
+    if (this.tarefa.estado == 1) {
+      this.tarefa.estado = 0;
+    } else {
+      this.tarefa.estado = 1;
+    }
+    this.tarefa = { "chave": this.tarefa.chave, "nome":this.tarefa.nome, "date": this.tarefa.date, "descricao": this.tarefa.descricao, "estado": this.tarefa.estado  }
+    localStorage.setItem(chave,JSON.stringify(this.tarefa));
+    this.ListaConsultas();
 }

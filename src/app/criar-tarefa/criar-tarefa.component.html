@@ -1,33 +1,31 @@
-<label>Criar Tarefa</label>
-<br/>
-<br/>
-<body>
-    <label>nome</label>
-    <input [(ngModel)]="nome" type="text" id="nome">
-    <br/>
-    <br/>
-    <label>Data de Entrega</label>
-    <input [(ngModel)]="date" type="date" name="data entrega" id="data entrega">
-    <br/>
-    <br/>
-    <label>Diciplina</label>
-    <select [(ngModel)]="estado">
-        <option value="matemática">Matematica</option>
-        <option value="Ling.Portuguesa">Ling.Portuguesa</option>
-        <option value="Historia">Historia</option>
-    </select>
-    <br/>
-    <br>
-    <label>Descrição</label>
-    <div class="input-group">
-        <div class="input-group-prepend">
+<app-header></app-header>
+    <div class="container-fluid" style="padding:30px;">
+        <br/>
+        <div class="form-group">
+            <label>Nome</label>
+            <input [(ngModel)]="nome" class="form-control" type="text" id="nome">
         </div>
-        <textarea [(ngModel)]="descricao" class="from-control" aria-label="with testearea" id="descrição"></textarea>
+        <div class="form-group">
+            <label>Data de Entrega</label>
+            <input [(ngModel)]="date" class="form-control" type="date" name="data entrega" id="data entrega">
+        </div>
+        <div class="form-group">
+            <label>Diciplina</label>
+            <select [(ngModel)]="estado" class="form-control">
+                <option value="matemática">Matematica</option>
+                <option value="Ling.Portuguesa">Ling.Portuguesa</option>
+                <option value="Historia">Historia</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Descrição</label>
+            <textarea [(ngModel)]="descricao" class="form-control" rows="3" aria-label="with testearea" id="descrição"></textarea>
+        </div>
+
+        <br/>
+        <br/>
+        <div style="text-align: right">
+        <button type="button" class="btn btn-primary" (click)="CriarTarefa()" id="criar">Criar</button>
+        <a href="/"><button type="button" class="btn btn-danger" style="margin-left:10px">Cancelar</button></a>
+        </div>
     </div>
-
-    <br/>
-    <br/>
-    <button type="button" (click)="CriarTarefa()" id="criar">Criar</button>
-    <a href="http://localhost:4200"><button>Cancelar</button></a>
-
-</body>
