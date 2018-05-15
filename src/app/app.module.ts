@@ -7,6 +7,7 @@ import { CriarTarefaComponent } from './criar-tarefa/criar-tarefa.component';
 import { routing } from './app.routing';
 import { TabelaAgendaComponent } from './tabela-agenda/tabela-agenda.component';
 import { HeaderComponent } from './header/header.component';
+import { VisTarefaComponent } from './vis-tarefa/vis-tarefa.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { HeaderComponent } from './header/header.component';
     VisHojeComponent,
     CriarTarefaComponent,
     TabelaAgendaComponent,
-    HeaderComponent
+    HeaderComponent,
+    VisTarefaComponent
    
     
   ],
