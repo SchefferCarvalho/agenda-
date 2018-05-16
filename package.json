@@ -23,6 +23,7 @@
     "@angular/router": "^6.0.0",
     "@angular/cli": "1.4.8",
     "@angular/compiler-cli": "^4.2.4",
+    "express": "*",
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
